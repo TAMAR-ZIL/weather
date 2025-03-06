@@ -2,7 +2,7 @@
 
 A modern, responsive weather application that lets you check the weather for any city in the world. This app integrates with a weather API to provide real-time weather updates, displayed in a clean and user-friendly design.
 ## Screenshots
-![image](https://github.com/user-attachments/assets/c89f170f-a46d-41c0-bc42-1535677b3ae5)
+![alt text](image.png)
 
 ## Features
 
