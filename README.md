@@ -1,9 +1,5 @@
 # Weather App
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/TAMAR-ZIL/weather/build.yml)
-![Dependencies](https://img.shields.io/david/TAMAR-ZIL/weather)
-![License](https://img.shields.io/github/license/TAMAR-ZIL/weather)
-
 ## Project Description
 This project is a weather application built with React. It allows users to check the weather in different cities around the world. The app fetches weather data from an external API and displays it in a clear and user-friendly manner.
 
