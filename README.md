@@ -6,6 +6,7 @@ This project is a weather application built with React. It allows users to check
 ## Project Structure
 The project includes the following directories and files:
 
+### Client Side
 ```
 weather/
 ├── public/
@@ -33,6 +34,20 @@ weather/
 ├── .gitignore
 ├── package.json
 ├── README.md
+```
+
+### Server Side
+```
+server/
+├── controller/
+│   └── weather.js
+├── router/
+│   └── weather.js
+├── .env
+├── .gitignore
+├── index.js
+├── package.json
+└── README.md
 ```
 
 ## Installation
