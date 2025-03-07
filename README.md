@@ -1,105 +1,97 @@
-# Weather App 🌤️
+# Weather App
 
-A modern, responsive weather application that lets you check the weather for any city in the world. This app integrates with a weather API to provide real-time weather updates, displayed in a clean and user-friendly design.
+![Build Status](https://img.shields.io/github/actions/workflow/status/TAMAR-ZIL/weather/build.yml)
+![Dependencies](https://img.shields.io/david/TAMAR-ZIL/weather)
+![License](https://img.shields.io/github/license/TAMAR-ZIL/weather)
+
+## Project Description
+This project is a weather application built with React. It allows users to check the weather in different cities around the world. The app fetches weather data from an external API and displays it in a clear and user-friendly manner.
+
+## Project Structure
+The project includes the following directories and files:
+
+```
+weather/
+├── public/
+│   ├── images/
+│   │   └── fintex.jpg
+├── src/
+│   ├── component/
+│   │   ├── FetchWeather.js
+│   │   └── FintaxImage.js
+│   ├── pages/
+│   │   └── Home.js
+│   ├── service/
+│   │   └── api.js
+│   ├── styles/
+│   │   ├── global.css
+│   │   ├── layout.css
+│   │   ├── search.css
+│   │   ├── weatherCard.css
+│   │   └── responsive.css
+│   ├── App.css
+│   ├── App.js
+│   ├── index.js
+│   └── .env
+│   └── .env.example
+├── .gitignore
+├── package.json
+├── README.md
+```
+
+## Installation
+To run the project locally, follow these steps:
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/TAMAR-ZIL/weather.git
+    ```
+
+2. Install all dependencies:
+    ```bash
+    cd weather
+    npm install
+    ```
+
+3. Create a `.env` file based on the example provided in `.env.example` and set the appropriate variables:
+    ```plaintext
+    WEATHER_API_KEY=your_api_key_here
+    VITE_API_URL=https://api.weatherapi.com/v1/forecast.json
+    ```
+
+4. Start the application:
+    ```bash
+    npm start
+    ```
+
+## Usage
+After starting the application, you can access it via your web browser at `http://localhost:3000`. The app will display an input field where you can enter the name of a city to check its weather.
+
+## Features
+- Real-time weather updates
+- Search weather by city name
+- Display temperature, precipitation, humidity, and wind speed
+- Responsive design for mobile and desktop
+
+## Technologies Used
+- React
+- Axios
+- CSS
+
 ## Screenshots
 ![alt text](image.png)
 
-## Features
+## .gitignore
+The `.gitignore` file includes all files and directories that should not be uploaded to the repository, including environment variable files (ENV) and the node_modules directory.
 
-- **City Search**: Enter the name of any city to get up-to-date weather information.
-- **Weather Data**: Displays temperature, humidity, wind speed, precipitation, and more.
-- **Responsive Design**: Works seamlessly across devices — mobile, tablet, and desktop.
-- **Live Updates**: Weather data is dynamically fetched from the server and updated in real-time.
+## Contribution
+If you wish to contribute to the project, please open an issue or pull request in the repository.
 
-## Tech Stack
+## Contact
+For any questions or suggestions, feel free to contact me:
 
-- **Frontend**: React.js, Custom CSS
-- **Backend**: Node.js, Express.js
-- **Weather API**: [WeatherAPI](https://www.weatherapi.com/)
-- **Styling**: Clean, custom-designed CSS with responsive design for all screen sizes.
+- GitHub: [TAMAR-ZIL](https://github.com/TAMAR-ZIL/weather)
+- Email: t0527199526@gmail.com
 
-## Getting Started
-
-Follow these steps to get the project running locally:
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/yourusername/weather-app.git
-cd weather-app
-2. Install Dependencies
-First, install the server-side dependencies for the backend:
-
-bash
-Copy
-Edit
-cd backend
-npm install
-Then, go to the frontend directory and install the necessary dependencies for the client:
-
-bash
-Copy
-Edit
-cd ../frontend
-npm install
-3. Setup Environment Variables
-Create a .env file in the backend directory by copying the .env.example file:
-
-bash
-Copy
-Edit
-cp .env.example .env
-Then, open the .env file and add your WeatherAPI key:
-
-bash
-Copy
-Edit
-WEATHER_API_KEY=your_api_key_here
-4. Run the App
-To start the backend server:
-
-bash
-Copy
-Edit
-cd backend
-npm start
-To start the frontend:
-
-bash
-Copy
-Edit
-cd frontend
-npm start
-The app will be available at http://localhost:3000 in your browser.
-
-Usage
-Open the app in your browser.
-Enter the name of the city you'd like to check the weather for in the search bar.
-Click the "Check" button to fetch the weather information for that city.
-The weather details will appear, including temperature, humidity, wind speed, and precipitation.
-Screenshots
-Here are some screenshots of the Weather App in action:
-
-
-Contributing
-We welcome contributions to the project! If you'd like to contribute:
-
-Fork the repository.
-Create a new branch.
-Make your changes.
-Submit a pull request.
-Please ensure your code follows the existing style and write meaningful commit messages.
-
-License
-This project is open-source and available under the MIT License.
-
-Contact
-For any questions or feedback, feel free to reach out:
-
-Email: t0527199526@gmail.com
-GitHub: https://github.com/TAMAR-ZIL/weather
-Thank you for checking out the Weather App! 🌦️
-
-
-
- 
+## License
+This project is licensed under the MIT License. For more details, see the LICENSE file in the repository.

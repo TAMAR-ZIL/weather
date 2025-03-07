@@ -1,0 +1,52 @@
+/* Search Section */
+.search-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin-left: 80px;
+}
+
+.input-text {
+    margin-left: 90px;
+    font-weight: 200;
+}
+
+#enter-a-city {
+    background-color: var(--temp-check-weather-stats-hourly-forecast) !important;
+    width: 100%;
+    padding: 15px 90px 15px 15px;
+    border-radius: 10px;
+    border: 1px solid var(--temp-check-weather-stats-hourly-forecast);
+    font-size: 1.2rem;
+    color: var(cooardinates-cityName-description);
+    outline: none;
+    height: 70px;
+    width: 320px;
+
+}
+
+#enter-a-city:focus {
+    background-color: white !important;
+}
+
+/* Check Button */
+.check-button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--button);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 20px;
+    font-size: 1rem;
+    font-weight: 200;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.search-area {
+    margin-top: 80px;
+}

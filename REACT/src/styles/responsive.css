@@ -1,0 +1,121 @@
+@media screen and (max-width: 1024px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        text-align: center;
+        white-space: normal;
+        position: relative;
+        z-index: 2;
+        margin-bottom: 40px;
+    }
+
+    .title {
+        font-size: 1.2rem;
+        line-height: 1.4;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        margin-bottom: 50px;
+    }
+
+    .left-side {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .search-wrapper {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-wrapper label {
+        text-align: left;
+        width: 100%;
+        display: block;
+        direction: ltr;
+    }
+
+    .input-text {
+        text-align: left;
+        display: block;
+        width: 100%;
+        margin-left: 90px;
+        direction: ltr;
+    }
+
+    .coordinates {
+        white-space: nowrap;
+        width: 100%;
+        max-width: 90%;
+        text-align: center;
+        position: static;
+        margin-top: 10px;
+     }
+
+    .right-side {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .weather-card-wrapper {
+        width: 90%;
+        max-width: 450px;
+        padding: 15px;
+        background-color: #e0e0e0;
+        border-radius: 12px;
+    }
+
+    .weather-card {
+        width: 100%;
+        margin: 30%;
+        padding: 20px;
+        background-color: #1E5D74;
+        border-radius: 12px;
+        max-width: 300px;
+        font-size: 14px;
+
+    }
+}
+@media screen and (max-width: 768px) {
+    .temperature {
+        font-size: 4rem;
+    }
+
+    .hour,
+    .temp {
+        font-size: 1rem;
+    }
+
+    .coordinates {
+        position: static;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .search-wrapper {
+        width: 100%;
+    }
+
+    .search-wrapper label {
+        text-align: left;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+    }
+}

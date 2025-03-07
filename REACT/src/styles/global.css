@@ -1,0 +1,49 @@
+:root {
+    --main-background-color:#f1f1f1;
+    --right-side: #DDE4E6;
+    --temp-check-weather-stats-hourly-forecast:#FFFFFF;
+    --city-hourly-forecast-weather-status:#E8F1F2;
+    --weather-card: #27737D;
+    --country-time:#A8C6CB;
+    --cooardinates-cityName-description:#707070;
+    --input-text:#363636;
+    --button: #046B3B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Heebo', sans-serif;
+}
+
+body {
+    background-color: var(--main-background-color);
+    color: var(--text-dark);
+}
+h1 {
+    margin-top: 0;
+    margin-left: 80px;
+    font-weight: 200;
+    color: var(--cooardinates-cityName-description);
+}
+.fintax-image {
+    position: absolute;
+    top: 1.5rem;
+    display: block !important; /* מונע הסתרה */
+    max-width: 100%; 
+    height: auto;
+}
+.coordinates {
+    flex-wrap: wrap;
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: 100;
+    text-align: center;
+    color: var(--text-dark);
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+    left: 130px;
+}
+ 

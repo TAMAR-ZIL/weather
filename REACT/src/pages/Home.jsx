@@ -1,6 +1,10 @@
-import FetchWeather from "./FetchWeather";
+import FetchWeather from "../component/FetchWeather";
 import { useState } from "react";
-import FintaxImage from "./FintaxImage";
+import FintaxImage from "../component/FintaxImage";
+import "../styles/global.css";
+import "../styles/layout.css";
+import "../styles/search.css";
+import"../styles/responsive.css";
 
 const Home = () => {
     const [city, setCity] = useState("");
@@ -23,7 +27,7 @@ const Home = () => {
         <div className="container">
             <div className="left-side">
                 <FintaxImage />
-                <h1>Use our weather app <br />to see the weather<br />around the world</h1>
+                <h1 className="title">Use our weather app <br />to see the weather<br />around the world</h1>
                 <div className="search-area">
                     <label className="input-text" htmlFor="enter-a-city">City name</label>
                     <div className="search-wrapper">
@@ -32,8 +36,8 @@ const Home = () => {
                     </div>
                     {weatherData && (
                         <div className="coordinates">
-                            <p>Latitude: {weatherData.location.lat} Longitude: {weatherData.location.lon}</p>
-                            <p>Accurate to: {formatDateTime(weatherData.location.localtime)}</p>
+                            <p>latitude: {weatherData.location.lat} longitude: {weatherData.location.lon}</p>
+                            <p>accurate to: {formatDateTime(weatherData.location.localtime)}</p>
                         </div>
                     )}
                 </div>
