@@ -1,6 +1,6 @@
 import FetchWeather from "../component/FetchWeather";
 import { useState } from "react";
-import FintaxImage from "../component/FintaxImage";
+import Logo from "../component/Logo";
 import "../styles/global.css";
 import "../styles/layout.css";
 import "../styles/search.css";
@@ -26,7 +26,7 @@ const Home = () => {
     return (
         <div className="container">
             <div className="left-side">
-                <FintaxImage />
+                <Logo/>
                 <h1 className="title">Use our weather app <br />to see the weather<br />around the world</h1>
                 <div className="search-area">
                     <label className="input-text" htmlFor="enter-a-city">City name</label>

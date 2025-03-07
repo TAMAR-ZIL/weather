@@ -2,10 +2,6 @@
 
 ## Project Description
 This project is a weather application built with React. It allows users to check the weather in different cities around the world. The app fetches weather data from an external API and displays it in a clear and user-friendly manner.
-
-## Project Structure
-The project includes the following directories and files:
-
 ### Client Side
 ```
 weather/

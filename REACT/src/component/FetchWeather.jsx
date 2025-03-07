@@ -5,26 +5,68 @@ import "../styles/layout.css";
 import "../styles/weatherCard.css";
 import "../styles/responsive.css";
 
-function FetchWeather({ city, weatherData,setWeatherData, formatDateTime }) {
+function FetchWeather({ city, weatherData, setWeatherData, formatDateTime }) {
     const [error, setError] = useState("");
-    
+
     useEffect(() => {
         if (!city) return;
 
         const fetchData = async () => {
             try {
                 const data = await fetchWeatherData(city);
-                // setWeather(data);
                 setWeatherData(data);
                 setError("");
             } catch (err) {
                 setError(err.message);
-                setWeatherData(null)
+                setWeatherData(null);
             }
         };
 
         fetchData();
     }, [city, setWeatherData]);
+
+    const Hours = () => {
+        const forecastHours = weatherData.forecast.forecastday[0].hour;
+        const currentHour = new Date(weatherData.location.localtime).getHours();
+        const currentIndex = forecastHours.findIndex(
+            (hourData) => new Date(hourData.time).getHours() === currentHour
+        );
+
+        let selectedHours = [];
+        if (currentIndex !== -1) {
+            selectedHours = forecastHours.slice(
+                Math.max(currentIndex - 2, 0),
+                Math.min(currentIndex + 2, forecastHours.length - 1) + 1
+            );
+
+            // אם השעה היא 22 או 23, נוסיף שעות מהיום הבא אם זמינות
+            if (currentHour >= 22) {
+                const nextDayHours = weatherData.forecast.forecastday[1]?.hour || [];
+                selectedHours = [...selectedHours, ...nextDayHours.slice(0, 5 - selectedHours.length)];
+            }
+        } else {
+            selectedHours = forecastHours.slice(0, 5);
+        }
+
+        return (
+            <div className="hourly-forecast">
+                <div className="hours-row">
+                    {selectedHours.map((hourData, index) => (
+                        <span key={index} className="hour">
+                            {new Date(hourData.time).getHours()}:00
+                        </span>
+                    ))}
+                </div>
+                <div className="temps-row">
+                    {selectedHours.map((hourData, index) => (
+                        <span key={index} className="temp">
+                            {Math.round(hourData.temp_c)}°
+                        </span>
+                    ))}
+                </div>
+            </div>
+        );
+    };
 
     return (
         <>
@@ -38,7 +80,7 @@ function FetchWeather({ city, weatherData,setWeatherData, formatDateTime }) {
                             <p className="date-time">{formatDateTime(weatherData.location.localtime)}</p>
                         </div>
                         <div className="center-card">
-                            <h1 className="temperature">{weatherData.current.temp_c}°</h1>
+                            <h1 className="temperature">{Math.round(weatherData.current.temp_c)}°</h1>
                             <p className="weather-status">{weatherData.current.condition.text}</p>
                         </div>
                         <div className="weather-stats">
@@ -56,39 +98,8 @@ function FetchWeather({ city, weatherData,setWeatherData, formatDateTime }) {
                             </div>
                         </div>
                         {weatherData.forecast &&
-                        weatherData.forecast.forecastday &&
-                        weatherData.forecast.forecastday[0] && (() => {
-                            const forecastHours = weatherData.forecast.forecastday[0].hour;
-                            const currentHour = new Date(weatherData.location.localtime).getHours();
-                            const currentIndex = forecastHours.findIndex(
-                                (hourData) => new Date(hourData.time).getHours() === currentHour
-                            );
-                            const selectedHours =
-                                currentIndex !== -1
-                                    ? forecastHours.slice(
-                                          Math.max(currentIndex - 2, 0),
-                                          Math.min(currentIndex + 2, forecastHours.length - 1) + 1
-                                      )
-                                    : forecastHours.slice(0, 5);
-                            return (
-                                <div className="hourly-forecast">
-                                    <div className="hours-row">
-                                        {selectedHours.map((hourData, index) => (
-                                            <span key={index} className="hour">
-                                                {new Date(hourData.time).getHours()}:00
-                                            </span>
-                                        ))}
-                                    </div>
-                                    <div className="temps-row">
-                                        {selectedHours.map((hourData, index) => (
-                                            <span key={index} className="temp">
-                                                {hourData.temp_c}°
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            );
-                        })()}
+                            weatherData.forecast.forecastday &&
+                            weatherData.forecast.forecastday[0] && <Hours />}
                     </div>
                 </div>
             )}
