@@ -1,12 +1,11 @@
 import axios from 'axios';
 import dotenv from 'dotenv';
 
-
 // Load environment variables (like API_KEY) securely from a .env file
 dotenv.config();
 // Define constants for the API key and the base API URL
-const API_KEY = process.env.WEATHER_API_KEY;
-const API_URL = "https://api.weatherapi.com/v1/forecast.json";
+const apiKey = process.env.WEATHER_API_KEY;
+const apiUrl = process.env.WEATHER_API_URL;
 /**
  * Fetches weather data for a specific city using the Weather API.
  * 
@@ -16,13 +15,13 @@ const API_URL = "https://api.weatherapi.com/v1/forecast.json";
 export const getWeather = async (city) => {
   try {
     // Check if the API_KEY is available, return null if missing
-    if (!API_KEY) {
-      console.error("API_KEY לא מוגדר!");
+    if (!apiKey||!apiUrl) {
+      console.error("url and key are required");
       return null;
     }
 
     // Construct the full request URL with the city, API key, and query parameters
-    const requestUrl = `${API_URL}?key=${API_KEY}&q=${city}&aqi=no`;
+    const requestUrl = `${apiUrl}?key=${apiKey}&q=${city}&aqi=no`;
 
     // Perform the asynchronous API request using axios
     const response = await axios.get(requestUrl);

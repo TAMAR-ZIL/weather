@@ -1,8 +1,6 @@
 import express from 'express';
 
-
 import { getWeather } from '../controller/weather.js';  
-
 
 // Initialize the express router for routing HTTP requests
 const router = express.Router();
@@ -15,11 +13,11 @@ const router = express.Router();
  * @returns {Object} - Returns the weather data as a JSON response, or an error message if something goes wrong.
  */
 router.get('/weather', async (req, res) => {
-  const city = req.query.city;  // Extract the city name from query parameters
+  const {city} = req.query;  // Extract the city name from query parameters
 
   // If the city parameter is not provided, return a 400 error with a relevant message
   if (!city) {
-    return res.status(400).json({ error: "נא לספק שם עיר" });
+    return res.status(400).json({ error: "Provide a city" });
   }
 
   try {
@@ -28,7 +26,7 @@ router.get('/weather', async (req, res) => {
 
     // If weather data is not available, return a 500 error
     if (!weatherData) {
-      return res.status(500).json({ error: "לא ניתן לקבל נתוני מזג אוויר" });
+      return res.status(500).json({ error: "Failed to get weather data" });
     }
 
     // If successful, return the weather data as a JSON response
@@ -36,7 +34,7 @@ router.get('/weather', async (req, res) => {
 
   } catch (error) {
     // Catch any unexpected errors and return a 500 server error
-    res.status(500).json({ error: "שגיאה פנימית בשרת" });
+    res.status(500).json({ error: "An internal server error"});
   }
 });
 

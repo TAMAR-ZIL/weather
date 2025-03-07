@@ -1,10 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-
-
 import weatherRouter from './router/weather.js';
-
 
 // Load environment variables (like PORT) securely from a .env file
 dotenv.config();

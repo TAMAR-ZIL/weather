@@ -11,6 +11,6 @@ export const fetchWeatherData = async (city) => {
         });
         return response.data;
     } catch (err) {
-        throw new Error("לא ניתן לקבל נתוני מזג אוויר.");
+        throw new Error("Cannot get weather data");
     }
 };

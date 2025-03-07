@@ -43,7 +43,7 @@ const Home = () => {
                 </div>
             </div>
 
-            {submittedCity && <FetchWeather city={submittedCity} setWeatherData={setWeatherData} formatDateTime={formatDateTime} />}
+            {submittedCity && <FetchWeather city={submittedCity} weatherData={weatherData}setWeatherData={setWeatherData} formatDateTime={formatDateTime} />}
         </div>
     );
 };

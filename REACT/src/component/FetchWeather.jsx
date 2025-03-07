@@ -5,22 +5,21 @@ import "../styles/layout.css";
 import "../styles/weatherCard.css";
 import "../styles/responsive.css";
 
-function FetchWeather({ city, setWeatherData, formatDateTime }) {
+function FetchWeather({ city, weatherData,setWeatherData, formatDateTime }) {
     const [error, setError] = useState("");
-    const [weather, setWeather] = useState(null);
-
+    
     useEffect(() => {
         if (!city) return;
 
         const fetchData = async () => {
             try {
                 const data = await fetchWeatherData(city);
-                setWeather(data);
+                // setWeather(data);
                 setWeatherData(data);
                 setError("");
             } catch (err) {
-                setWeather(null);
                 setError(err.message);
+                setWeatherData(null)
             }
         };
 
@@ -30,37 +29,37 @@ function FetchWeather({ city, setWeatherData, formatDateTime }) {
     return (
         <>
             {error && <p style={{ color: "red" }}>{error}</p>}
-            {weather && weather.location && (
+            {weatherData && weatherData.location && (
                 <div className="right-side">
                     <div className="weather-card">
                         <div className="top-card">
-                            <h2 className="location">{weather.location.region}</h2>
-                            <p className="country">{weather.location.country}</p>
-                            <p className="date-time">{formatDateTime(weather.location.localtime)}</p>
+                            <h2 className="location">{weatherData.location.region}</h2>
+                            <p className="country">{weatherData.location.country}</p>
+                            <p className="date-time">{formatDateTime(weatherData.location.localtime)}</p>
                         </div>
                         <div className="center-card">
-                            <h1 className="temperature">{weather.current.temp_c}°</h1>
-                            <p className="weather-status">{weather.current.condition.text}</p>
+                            <h1 className="temperature">{weatherData.current.temp_c}°</h1>
+                            <p className="weather-status">{weatherData.current.condition.text}</p>
                         </div>
                         <div className="weather-stats">
                             <div className="weather-stats1">
                                 <p className="wind">precipitation</p>
-                                <p className="icon">{weather.current.precip_mm} mm</p>
+                                <p className="icon">{weatherData.current.precip_mm} mm</p>
                             </div>
                             <div className="weather-stats2">
                                 <p className="wind">humidity</p>
-                                <p className="icon">{weather.current.humidity}%</p>
+                                <p className="icon">{weatherData.current.humidity}%</p>
                             </div>
                             <div className="weather-stats3">
                                 <p className="wind">wind</p>
-                                <p className="icon">{weather.current.wind_kph} km/h</p>
+                                <p className="icon">{weatherData.current.wind_kph} km/h</p>
                             </div>
                         </div>
-                        {weather.forecast &&
-                        weather.forecast.forecastday &&
-                        weather.forecast.forecastday[0] && (() => {
-                            const forecastHours = weather.forecast.forecastday[0].hour;
-                            const currentHour = new Date(weather.location.localtime).getHours();
+                        {weatherData.forecast &&
+                        weatherData.forecast.forecastday &&
+                        weatherData.forecast.forecastday[0] && (() => {
+                            const forecastHours = weatherData.forecast.forecastday[0].hour;
+                            const currentHour = new Date(weatherData.location.localtime).getHours();
                             const currentIndex = forecastHours.findIndex(
                                 (hourData) => new Date(hourData.time).getHours() === currentHour
                             );
