@@ -40,10 +40,10 @@
 
 /* Main Temperature */
 .temperature {
-    margin-top: -20px;
+    margin-top: -30px;
     font-size: 6.5rem; 
     font-weight: 600;
-    margin-right:  30rem;
+    margin-right:  30px;
     color: var(--temp-check-weather-stats-hourly-forecast);
 }
 .weather-status {

@@ -1,33 +1,26 @@
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1100px) {
     .container {
-        display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
     .title {
-        font-size: 1.5rem;
-        text-align: center;
-        white-space: normal;
-        position: relative;
-        z-index: 2;
-        margin-bottom: 40px;
-    }
-
-    .title {
-        font-size: 1.2rem;
         line-height: 1.4;
         text-align: center;
         position: relative;
         z-index: 2;
         margin-bottom: 50px;
+        margin-top: 200px;
     }
 
     .left-side {
         width: 100%;
         text-align: center;
         padding: 20px;
+        padding-top: 0px;
+        margin-top: 0px;
+        margin-bottom: 200px;
+        height: 800px;
     }
 
     .search-wrapper {
@@ -35,6 +28,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: 60px;
     }
 
     .search-wrapper label {
@@ -58,8 +52,10 @@
         max-width: 90%;
         text-align: center;
         position: static;
-        margin-top: 10px;
-     }
+        margin-top: 40px;
+        margin-bottom: 0px;
+        margin-left: 30px;
+    }
 
     .right-side {
         width: 100%;
@@ -84,38 +80,68 @@
         border-radius: 12px;
         max-width: 300px;
         font-size: 14px;
+    }
 
+    .fintax-image {
+        margin-top: 150px;
     }
 }
-@media screen and (max-width: 768px) {
-    .temperature {
-        font-size: 4rem;
+
+@media screen and (max-width: 960px) {
+    .right-side {
+        margin-right: 200px;
+        width: 300px;
+        margin-left: 50px;
     }
 
-    .hour,
-    .temp {
-        font-size: 1rem;
+    .left-side {
+        margin-left: 200px;
+        width: 350px;
     }
 
-    .coordinates {
-        position: static;
-        text-align: center;
-        margin-top: 10px;
+    .title {
+        font-size: 1.6rem;
+        margin-left: 10px;
     }
 
     .search-wrapper {
-        width: 100%;
-    }
-
-    .search-wrapper label {
-        text-align: left;
-        width: 100%;
+        margin-right: 200px;
+        margin-left: 0px;
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 895px) {
     .container {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+    }
+
+    .right-side {
+        margin-top: 0px;
+        width: 70%;
+        margin-left: 50%;
+        margin-right: 40%;
+    }
+
+    .left-side {
+        margin-top: 400px;
+        margin-bottom: 0px;
+        width: 70%;
+        margin-left: 0px;
+    }
+
+    .coordinates {
+        margin-top: 100px;
+    }
+
+    .title {
+        margin-top: 300px;
+    }
+
+    .right-side .weather-card {
+        width: 800px;
+        margin: 0px;
     }
 }
+
+@media screen and (max-width: 590px) {}
