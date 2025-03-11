@@ -38,12 +38,14 @@ function FetchWeather({ city, weatherData, setWeatherData, formatDateTime }) {
                 Math.max(currentIndex - 2, 0),
                 Math.min(currentIndex + 2, forecastHours.length - 1) + 1
             );
-
-            // אם השעה היא 22 או 23, נוסיף שעות מהיום הבא אם זמינות
             if (currentHour >= 22) {
                 const nextDayHours = weatherData.forecast.forecastday[1]?.hour || [];
-                selectedHours = [...selectedHours, ...nextDayHours.slice(0, 5 - selectedHours.length)];
+                selectedHours = [
+                    ...selectedHours,
+                    ...nextDayHours.slice(0, 5 - selectedHours.length) // add hours from next day
+                ];
             }
+
         } else {
             selectedHours = forecastHours.slice(0, 5);
         }
@@ -51,11 +53,17 @@ function FetchWeather({ city, weatherData, setWeatherData, formatDateTime }) {
         return (
             <div className="hourly-forecast">
                 <div className="hours-row">
-                    {selectedHours.map((hourData, index) => (
-                        <span key={index} className="hour">
-                            {new Date(hourData.time).getHours()}:00
-                        </span>
-                    ))}
+                    {selectedHours.map((hourData, index) => {
+                        let hour = new Date(hourData.time).getHours();
+                        if (hour >= 12) {
+                            hour = hour - 12;
+                        }
+                        return (
+                            <span key={index} className="hour">
+                                {hour}:00
+                            </span>
+                        );
+                    })}
                 </div>
                 <div className="temps-row">
                     {selectedHours.map((hourData, index) => (

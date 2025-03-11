@@ -4,7 +4,7 @@ import Logo from "../component/Logo";
 import "../styles/global.css";
 import "../styles/layout.css";
 import "../styles/search.css";
-import"../styles/responsive.css";
+import "../styles/responsive.css";
 
 const Home = () => {
     const [city, setCity] = useState("");
@@ -26,7 +26,7 @@ const Home = () => {
     return (
         <div className="container">
             <div className="left-side">
-                <Logo/>
+                <Logo />
                 <h1 className="title">Use our weather app <br />to see the weather<br />around the world</h1>
                 <div className="search-area">
                     <label className="input-text" htmlFor="enter-a-city">City name</label>
@@ -43,7 +43,7 @@ const Home = () => {
                 </div>
             </div>
 
-            {submittedCity && <FetchWeather city={submittedCity} weatherData={weatherData}setWeatherData={setWeatherData} formatDateTime={formatDateTime} />}
+            {submittedCity && <FetchWeather city={submittedCity} weatherData={weatherData} setWeatherData={setWeatherData} formatDateTime={formatDateTime} />}
         </div>
     );
 };

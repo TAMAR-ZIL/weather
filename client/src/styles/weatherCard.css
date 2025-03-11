@@ -6,13 +6,14 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    width: 450px; /* הגדלה מעטה של הכרטיס */
+    width: 450px;
+    /* הגדלה מעטה של הכרטיס */
     height: 550px;
     padding: 30px;
     gap: 20px;
 }
 
- /* Location Title */
+/* Location Title */
 .location {
     color: var(--city-hourly-forecast-weather-status);
     font-size: 1.8rem;
@@ -28,7 +29,7 @@
     color: var(--country-time);
 }
 
- /* Date and Time */
+/* Date and Time */
 .date-time {
     font-size: 1.1rem;
     font-weight: 300;
@@ -41,17 +42,19 @@
 /* Main Temperature */
 .temperature {
     margin-top: -30px;
-    font-size: 6.5rem; 
+    font-size: 6.5rem;
     font-weight: 600;
-    margin-right:  30px;
+    margin-right: 30px;
     color: var(--temp-check-weather-stats-hourly-forecast);
 }
+
 .weather-status {
     color: var(--city-hourly-forecast-weather-status);
     margin-top: -40px;
     font-size: 1.8rem;
     font-weight: 300;
 }
+
 /* Weather Stats (Precipitation, Humidity, Wind) */
 .weather-stats {
     display: grid;
@@ -77,9 +80,10 @@
     display: flex;
     justify-content: space-around;
 }
-.hour{
+
+.hour {
     color: var(--temp-check-weather-stats-hourly-forecast);
-    
+
 }
 
 .hour,
@@ -89,11 +93,13 @@
     font-size: 19px;
     margin-bottom: -10xp;
 }
-.wind{
+
+.wind {
     font-size: 1.2rem;
     font-weight: 100;
     color: var(--city-hourly-forecast-weather-status);
 }
-.icon{
-    color:var(--temp-check-weather-stats-hourly-forecast) ;
+
+.icon {
+    color: var(--temp-check-weather-stats-hourly-forecast);
 }
